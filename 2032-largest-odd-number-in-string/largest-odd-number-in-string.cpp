@@ -11,7 +11,7 @@ public:
         if(idx==-1)
         return "";
         int start=0;
-        while(start<idx && num[start]==0){
+        while(start<idx && num[start]=='0'){
             start++;
         }
         return num.substr(start,idx-start+1);
