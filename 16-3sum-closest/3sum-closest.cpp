@@ -12,8 +12,7 @@ public:
                 if(abs(currentsum-target)<abs(closestsum-target)){
                     closestsum=currentsum;
                 }
-                if(currentsum==target) return currentsum;
-                else if(currentsum<target) left++;
+                if(currentsum<target) left++;
                 else right--;
             }
         }
