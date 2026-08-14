@@ -5,12 +5,12 @@ public:
         int maxfreq=0;
         int left=0;
         int ans=0;
-        unordered_map<char,int> mp;
+        vector<int> mp(26,0);
         for(int right=0;right<n;right++){
-            mp[s[right]]++;
-            maxfreq=max(maxfreq,mp[s[right]]);
+            mp[s[right]-'A']++;
+            maxfreq=max(maxfreq,mp[s[right]-'A']);
             while((right-left+1)-maxfreq > k){
-                mp[s[left]]--;
+                mp[s[left]-'A']--;
                 left++;
             }
             ans=max(ans,right-left+1);
