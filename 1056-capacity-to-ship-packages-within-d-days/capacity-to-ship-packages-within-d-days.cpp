@@ -17,10 +17,10 @@ public:
     int shipWithinDays(vector<int>& weights, int days) {
         int maxi=*max_element(weights.begin(),weights.end());
         int sum=accumulate(weights.begin(),weights.end(),0);
-        while(maxi<=sum){
+        while(maxi<sum){
             int mid=(maxi+sum)/2;
             if(daysreq(weights,mid)<=days)
-            sum=mid-1;
+            sum=mid;
             else
             maxi=mid+1;
         }
